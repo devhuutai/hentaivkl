@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./../../../assets/erp/css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="./../../../assets/erp/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="./../../../assets/erp/css/magnific-popup.css" />
+    <link rel="stylesheet" href="./../../../assets/erp/css/select2.min.css" />
+    <link rel="stylesheet" href="./../../../assets/erp/css/admin.css" />
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="icon/favicon-32x32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="icon/favicon-32x32.png" />
+    
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Dmitry Volkov" />
+    <title><%=dataFormat.name%></title>
+  </head>
+  
+  <body>
+    <!-- header -->
+    <header class="header">
+      <div class="header__content">
+        <!-- header logo -->
+        <a href="index.html" class="header__logo">
+          <img src="./../../../assets/erp/img/logo.svg" alt="" />
+        </a>
+        <!-- end header logo -->
+        
+        <!-- header menu btn -->
+        <button class="header__btn" type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <!-- end header menu btn -->
+      </div>
+    </header>
+    <!-- end header -->
+    
+    <!-- sidebar -->
+    <div class="sidebar">
+      <!-- sidebar logo -->
+      <a href="index.html" class="sidebar__logo">
+        <img src="./../../../assets/erp/img/logo.svg" alt="" />
+      </a>
+      <!-- end sidebar logo -->
+      
+      <!-- sidebar user -->
+      <div class="sidebar__user">
+        <div class="sidebar__user-img">
+          <img src="./../../../assets/erp/img/user.svg" alt="" />
+        </div>
+        
+        <div class="sidebar__user-title">
+          <span>Admin</span>
+          <p>John Doe</p>
+        </div>
+        
+        <button class="sidebar__user-btn" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M4,12a1,1,0,0,0,1,1h7.59l-2.3,2.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l4-4a1,1,0,0,0,.21-.33,1,1,0,0,0,0-.76,1,1,0,0,0-.21-.33l-4-4a1,1,0,1,0-1.42,1.42L12.59,11H5A1,1,0,0,0,4,12ZM17,2H7A3,3,0,0,0,4,5V8A1,1,0,0,0,6,8V5A1,1,0,0,1,7,4H17a1,1,0,0,1,1,1V19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V16a1,1,0,0,0-2,0v3a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V5A3,3,0,0,0,17,2Z" />
+          </svg>
+        </button>
+      </div>
+      <!-- end sidebar user -->
+      
+      <!-- sidebar nav -->
+      <%-include('../sidebar')%>
+      
+      <!-- end sidebar nav -->
+      
+      <!-- sidebar copyright -->
+      <div class="sidebar__copyright">© FlixTV.template, 2021. <br />Create by <a href="https://themeforest.net/user/dmitryvolkov/portfolio" target="_blank">Dmitry Volkov</a></div>
+      <!-- end sidebar copyright -->
+    </div>
+    <!-- end sidebar -->
+    
+    <!-- main content -->
+    <main class="main">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- main title -->
+          <div class="col-12">
+            <div class="main__title">
+              <h2>Chỉnh sửa truyện <%=dataFormat.name%></h2>
+            </div>
+            
+          </div>
+          <!-- end main title -->
+          <!-- form -->
+          <div class="col-12">
+            <form action="#" class="form">
+              <div class="row">
+                <div class="col-12 col-md-5 form__cover">
+                  <div class="row">
+                    <div class="col-12 col-sm-6 col-md-12">
+                      <h6 style="color: aliceblue;text-align: center;float: left;">Tổng số chương : <%=dataFormat.countChapters%></h6>
+                      <div class="form__img">
+                        <label for="form__img-upload">Upload Thumb (192 x 250)</label>
+                        <input id="form__img-upload" name="form__img-upload" type="file" accept=".png, .jpg, .jpeg" />
+                        <img id="form__img" src="<%=dataFormat.thumb%>" alt=" " />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-12 col-md-7 form__content">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form__group">
+                        <input type="text" name="name" id="name" value="<%=dataFormat.name%>" class="form__input" placeholder="Tiêu đề" />
+                      </div>
+                    </div>
+                    
+                    <div class="col-12">
+                      <div class="form__group">
+                        <input type="text" name="slug" id="slug" value="<%=dataFormat.slug%>" class="form__input" placeholder="slug" />
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form__group">
+                        <textarea name="content" id="content" value="<%=dataFormat.content%>" class="form__textarea" placeholder="Nội dung"><%=dataFormat.content%></textarea>
+                      </div>
+                    </div>
+                    
+                    <<div class="col-12 col-lg-12">
+                      <div class="form__group">
+                        <select class="js-example-basic-multiple" id="categories" multiple="multiple">
+                          <% dataFormat?.idCategories.forEach(category => { %>
+                          <option key="<%= category.id%>" <% if(category.id){%>selected<%}%> value="<%- category.id %>"><%= category.name %></option>
+                          <% }); %>
+                          
+                          <% categoriesFormat.filter(category => !dataFormat?.idCategories.includes(category.id)).forEach(category => { %>
+                          <% if (!dataFormat?.idCategories.includes(category.id)) { %>
+                          <option key="<%= category.id %>" value="<%= category.id %>"><%= category.name %></option>
+                          <% } %>
+                          <% }); %>
+                        </select>
+                      </div>
+                  </div>
+                  <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="form__group">
+                      <input type="text" name="status" id="status" value="<%=dataFormat.status%>" class="form__input" placeholder="Trạng thái truyện" />
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6 col-lg-8">
+                    <div class="form__group">
+                      <input type="text" name="tags" id="tags" value="<%=dataFormat.tags%>" class="form__input" placeholder="Thẻ tags" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+         
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-2">
+                    <input type="hidden" id="currentSlug" value="<%=dataFormat.slug%>">       
+                    <button type="button" id="submitProductsEdit" class="form__btn">publish</button>
+                  </div>
+                    <div class="col-10">
+               <button><a href="/erp/chapters/create" style="float:left" class="form__btn">add item</a></button>
+                  </div>
+                </div>
+              </div>
+              
+              
+          </div>
+          </form>
+          <div class="col-12">
+            <div class="main__table-wrap">
+              <table class="main__table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>SLUG</th>
+                    <th>Ngày tạo</th>
+                    <th>Actions</th>
+                    
+                  </tr>
+                </thead>
+                
+                <tbody>
+                  <% dataFormat.chapters.forEach(function(item) { %>
+                  <tr>
+                    <td>
+                      <div class="main__table-text"><%=item?.id%></div>
+                    </td>
+                    <td>
+                      <div class="main__table-text"><a href="#"><%=item?.name%></a></div>
+                    </td>
+                    <td>
+                      <div class="main__table-text main__table-text--rate">
+                        <%=item?.slug%>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="main__table-text"> <%=item?.creatAT%></div>
+                    </td>
+                    
+                    <td>
+                      <div class="main__table-btns">
+                        <a href="/erp/chapters/edit/<%=item?.uuid%>" class="main__table-btn main__table-btn--edit">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M22,7.24a1,1,0,0,0-.29-.71L17.47,2.29A1,1,0,0,0,16.76,2a1,1,0,0,0-.71.29L13.22,5.12h0L2.29,16.05a1,1,0,0,0-.29.71V21a1,1,0,0,0,1,1H7.24A1,1,0,0,0,8,21.71L18.87,10.78h0L21.71,8a1.19,1.19,0,0,0,.22-.33,1,1,0,0,0,0-.24.7.7,0,0,0,0-.14ZM6.83,20H4V17.17l9.93-9.93,2.83,2.83ZM18.17,8.66,15.34,5.83l1.42-1.41,2.82,2.82Z" />
+                          </svg>
+                        </a>
+                        <a href="#modal-delete" class="main__table-btn main__table-btn--deleteChapters open-modal" data-item-name="<%= item.name %>" data-item-id="<%= item.uuid %>">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M10,18a1,1,0,0,0,1-1V11a1,1,0,0,0-2,0v6A1,1,0,0,0,10,18ZM20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Zm-3-1a1,1,0,0,0,1-1V11a1,1,0,0,0-2,0v6A1,1,0,0,0,14,18Z" />
+                          </svg>
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <% }); %>
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- end form -->
+        <div class="col-12">
+          <div class="paginator">
+            <span class="paginator__pages"><%= total %></span>
+            <ul class="paginator__paginator">
+              <li>
+                <a href="/erp/products/edit/<%=dataFormat.slug%>?page=<%= (page == 1) ? 1 : page - 1 %><% if (filterName) { %>&filterName=<%= filterName %><% } %>">
+                  <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.75 5.36475L13.1992 5.36475" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M5.771 10.1271L0.749878 5.36496L5.771 0.602051" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </a>
+              </li>
+              
+              <% for (let i = 1; i <= totalPage; i++) { %>
+              <li <% if (i == page) { %>class="active" <% } %>><a href="/erp/products/edit/<%=dataFormat.slug%>?page=<%= i %><% if (filterName) { %>&filterName=<%= filterName %><% } %>"><%= i %> </a></li>
+              <% } %>
+              
+              <li>
+                <a href="/erp/products/edit/<%=dataFormat.slug%>?page=<%=(totalPage == page) ? totalPage :  parseInt(page) + 1 %><% if (filterName) { %>&filterName=<%= filterName %><% } %>">
+                  <svg width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.1992 5.3645L0.75 5.3645" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M8.17822 0.602051L13.1993 5.36417L8.17822 10.1271" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+    </main>
+    <!-- modal status -->
+    <div id="modal-status" class="zoom-anim-dialog mfp-hide modal">
+      <h6 class="modal__title">Status change</h6>
+      
+      <p class="modal__text">Are you sure about immediately change status?</p>
+      
+      <div class="modal__btns">
+        <button class="modal__btn modal__btn--apply" type="button">Apply</button>
+        <button class="modal__btn modal__btn--dismiss" type="button">Dismiss</button>
+      </div>
+    </div>
+    <!-- end modal status -->
+    
+    <!-- modal delete -->
+    <div id="modal-delete" class="zoom-anim-dialog mfp-hide modal">
+      <h6 class="modal__title">Xóa thể loại này</h6>
+      
+      <p class="modal__text">Bạn có chắc là muốn xóa không</p>
+      
+      <div class="modal__btns">
+        <button class="modal__btn modal__btn--apply" type="button">Xóa</button>
+        <button class="modal__btn modal__btn--dismiss" type="button">Hủy</button>
+      </div>
+    </div>
+    <!-- end main content -->
+    
+    <!-- JS -->
+    <script src="./../../../assets/erp/js/jquery-3.5.1.min.js"></script>
+    <script src="./../../../assets/erp/js/bootstrap.bundle.min.js"></script>
+    <script src="./../../../assets/erp/js/jquery.magnific-popup.min.js"></script>
+    <script src="./../../../assets/erp/js/smooth-scrollbar.js"></script>
+    <script src="./../../../assets/erp/js/select2.min.js"></script>
+    <script src="./../../../assets/erp/js/admin.js"></script>
+  </body>
+  
+</html>

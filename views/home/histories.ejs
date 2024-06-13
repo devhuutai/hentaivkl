@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="generator" content="HentaiVL" />
+    <meta name="robots" content="index, follow" />
+    <title>Lịch sử đọc truyện - Comics24h</title>
+    <link rel="canonical" href="<%=urlSeo%>/lich-su/viewer" />
+    <meta name="keywords" itemprop="keywords" content="lịch sử đọc truyện, comics24h" />
+    <meta name="news_keywords" content="lịch sử đọc truyện, comics24h" />
+    <meta name="description" content="❶❶✅ Lịch sử các bộ truyện bạn đã đọc trên Comics24h" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lịch sử đọc truyện - Comics24h" />
+    <meta name="twitter:description" content="❶❶✅ Lịch sử các bộ truyện bạn đã đọc trên Comics24h" />
+    <meta name="twitter:image" content="http://static.hentaivll.com/images/hentaivl.jpg" />
+    <meta property="og:title" content="Lịch sử đọc truyện - Comics24h" />
+    <meta property="og:image" content="http://static.hentaivll.com/images/hentaivl.jpg" />
+    <meta property="og:description" content="❶❶✅ Lịch sử các bộ truyện bạn đã đọc trên Comics24h" />
+    <meta property="og:url" content="<%=urlSeo%>" />
+    <meta property="og:site_name" content="Hentaivl" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="fb:app_id" content />
+    <meta name="Author" content="HentaiVL.com" />
+    <%-include('header')%>
+  </head>
+  <body>
+    <div id="glo_wrapper">
+      <header id="glo_header">
+        <div class="header-mobile">
+          <div class="top_header01">
+            <button class="side_menu btn-menu">menu</button>
+            <div class="logo">
+              <a href="/" class="brand"><img src="http://static.hentaivll.com/images/logo.png" alt="Hentaivl" width="160" /></a>
+            </div>
+            <button type="button" class="side_search">search</button>
+          </div>
+          <div class="top_header02">
+            <div class="lnb">
+              <ul>
+                <%-include('submenu')%>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="glo_header_wrap">
+          <div class="glo_header_left">
+            <a href="/" class="header-logo">
+              <h2>Truyện Hentai Online - Đọc Truyện Tranh 18+, Manga, Manhwa Hentai</h2>
+            </a>
+            <div id="glo_gnb" class="navbar-menu">
+              <ul>
+                <li>
+                  <a href="/" target="_self">Thể loại <span class="caret"></span></a>
+                  <ul class="sub-menu">
+                    <li>
+                      <a class="navbar-menu-item cathot" href="/">Tất cả</a>
+                    </li>
+                      <% categoriesFormat.forEach(function(item) { %>
+                    <li><a class="navbar-menu-item" href="/the-loai/<%=item?.slug%>/"> <%=item.name%></a></li>
+                    <% }); %>
+                  </ul>
+                </li>
+                          <%-include('submenu')%>
+
+              </ul>
+            </div>
+          </div>
+          <div class="glo_header_right">
+            <div class="section_search">
+              <input type="hidden" id="recent_search_cnt" value="0" />
+              <form method="get" name="f" id="search_frm" class="form-srch">
+                <fieldset>
+                  <legend>Tìm kiếm truyện</legend>
+                  <input type="search" name="search_val" id="srch-val" class="top_search" placeholder="Tìm truyện..." style="font-size: 12px" autocomplete="off" />
+                  <button type="submit" class="btn_search"><span class="sr-only">Search</span></button>
+                </fieldset>
+              </form>
+              <div id="search-result" class="search-result hide"></div>
+            </div>
+          </div>
+        </div>
+        <div class="fun_search" id="fun_search" style>
+          <div class="box-input">
+            <input id="txtSearch" type="text" class="i-search" placeholder="Tìm truyện..." />
+          </div>
+          <div id="result-manga" class="result-manga"></div>
+          <button class="b-search" title="Tìm truyện"></button>
+          <a class="btn-txt-cancel-search" title="Hủy tìm truyện" rel="nofollow"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+        </div>
+        <nav id="gnb" class="gnb menu-close">
+          <div class="gnb-header">
+            <div class="gnb-header-1">
+              <img src="https://static.hentaivkl.com/images/logo.png" width="159" alt="Hentaivl" class="gnb-logo" />
+              <p>Đọc truyện hentai online miễn phí mọi lúc, mọi nơi</p>
+              <div class="row">
+                <div class="col-xs-6 p-r-5">
+                  <button type="button" class="btn btn-block btn-white-outlined" id="aside-menu">Đăng nhập</button>
+                </div>
+                <div class="col-xs-6 p-l-5">
+                  <button type="button" class="btn btn-block btn-white-outlined">Đăng ký</button>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn btn-menu-close">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="gnb-body">
+            <ul>
+              <li>
+                <a href="/lich-su">
+                  <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                  <span class="text-red"> Lịch sử đọc truyện</span>
+                </a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="https://manhwalike.com/" target="_blank">
+                  <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                  <span class="text-red"> Raw Hentai</span>
+                </a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="javascript:void(0);" rel="nofollow">
+                  <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                  Thể loại
+                </a>
+                <ul class="sub-menu">
+                  <li>
+                    <a class="m-menu-item cathot" href="/">Tất cả</a>
+                  </li>
+              <% categoriesFormat.forEach(function(item) { %>
+                    <li><a class="navbar-menu-item" href="/the-loai/<%=item?.slug%>/"> <%=item.name%></a></li>
+                    <% }); %>
+                    
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="gnb-back"></div>
+      </header>
+      <div id="glo_contents">
+        <div class="section_ongoing_wrap">
+          <div class="section_content_wapper section_ongoing category-content">
+            <div class="ongoing_title">
+              <h1 class="rank">Lịch sử đọc truyện</h1>
+            </div>
+            <div class="category-intro">Nhấn vào "Đọc tiếp" để đọc tiếp chapter bạn đang đọc trước đó. Lưu ý danh sách được sắp xếp theo thời gian đọc cuối cùng chứ không phải ngày cập nhật</div>
+            <div class="list_wrap">
+              <div class="visited-comics-page"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+          <%-include('footer')%>
+
+ 
+    </div>
+  </body>
+</html>

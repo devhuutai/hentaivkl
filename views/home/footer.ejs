@@ -1,0 +1,37 @@
+<footer>
+  <div class="footer-top">
+    <div class="inner p-relative">
+      <ul></ul>
+    </div>
+  </div>
+  <div class="footer-info" role="contentinfo">
+    <div class="inner p-relative">
+      <div class="footer-bottom">
+        <div class="footer-bottom-text">
+          <p class="footer-logo">
+            <a href=""><img src="/css/images/logo.png" width="220px" alt="HentaiVL.com" /></a>
+          </p>
+          <%-dataConfigsFooter%>
+        </div>
+        <div class="footer-bottom-tag">
+          <div class="tag-footer">
+              <% dataConfigsFooterTags.forEach(function(item) { %>
+            <a href="/"><%=item.title%></a>
+                        <% }); %>
+          </div>
+          <p>
+            Tất cả các truyện trên site đều được sưu tầm từ các nguồn trên Internet. Chúng tôi không sở hữu hay chịu trách nhiệm bất kỳ thông tin nào trên web này. Nếu làm ảnh hưởng đến cá nhân hay tổ
+            chức nào, khi được yêu cầu, chúng tôi sẽ xem xét và gỡ bỏ ngay lập tức..
+          </p>
+          <p>Liên hệ: admin@hentaivkl.net</p>
+          <br />
+          <p><%=dataConfigsFooterCopy%>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+   <div id="scrollup" class="scrollup" style="display: inline"><span class="glyphicon glyphicon-arrow-up"></span></div>
+      <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="/assets/app.js?v=1.05"></script>

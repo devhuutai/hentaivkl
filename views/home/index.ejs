@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="vi">
+  
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="generator" content="HentaiVKL" />
+    <meta name="robots" content="index, follow" />
+    
+    <title><%=dataConfigsFooterTitle%></title>
+    
+    <link rel="canonical" href="<%=urlSeo%>/" />
+    <meta name="keywords" itemprop="keywords" content="<%=dataConfigsFooterKeywords%>" />
+    <meta name="news_keywords" content="<%=dataConfigsFooterKeywords%>" />
+    <meta name="description" content="<%=dataConfigsFooterDescription%>" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="<%=dataConfigsFooterTitle%>" />
+    <meta name="twitter:description" content="<%=dataConfigsFooterDescription%>" />
+    <meta name="twitter:image" content="/css/images/hentaivkl.jpg" />
+    
+    <meta property="og:title" content="<%=dataConfigsFooterTitle%>" />
+    <meta property="og:image" content="/css/images/hentaivkl.jpg" />
+    <meta property="og:description" content="<%=dataConfigsFooterDescription%>" />
+    <meta property="og:url" content="<%=urlSeo%>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="fb:app_id" content="" />
+    
+    <%-include('header')%>
+  </head>
+  
+  <body>
+    <div id="glo_wrapper">
+      <header id="glo_header">
+        <div class="header-mobile">
+          <div class="top_header01">
+            <button class="side_menu btn-menu">menu</button>
+            <div class="logo">
+              <a href="/" class="brand"><img src="/css/images/logo.png" alt="Hentaivkl" width="160" /></a>
+            </div>
+            <button type="button" class="side_search">search</button>
+          </div>
+          <div class="top_header02">
+            <div class="lnb">
+              <ul>
+                <%-include('submenu')%>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="glo_header_wrap">
+          <div class="glo_header_left">
+            <a href="/" class="header-logo">
+              <h2><%=dataConfigsFooterTitle%></h2>
+            </a>
+            
+            <div id="glo_gnb" class="navbar-menu">
+              <ul>
+                <li>
+                  <a href="/" target="_self">Thể loại <span class="caret"></span></a>
+                  <ul class="sub-menu">
+                    <li>
+                      <a class="navbar-menu-item cathot" href="/">Tất cả</a>
+                    </li>
+                    <% categoriesFormat.forEach(function(item) { %>
+                    <li><a class="navbar-menu-item" href="/the-loai/<%=item?.slug%>/"> <%=item.name%></a></li>
+                    <% }); %>
+                    
+                  </ul>
+                </li>
+                <%-include('submenu')%>
+              </ul>
+            </div>
+          </div>
+          
+        <div class="glo_header_right">
+  <div class="section_search">
+    <input type="hidden" id="recent_search_cnt" value="0" />
+    <form method="get" action="/tim-kiem" name="f" id="search_frm" class="form-srch">
+      <fieldset>
+        <legend>Tìm kiếm truyện</legend>
+        <input type="search" name="search_val" id="srch-val" class="top_search" placeholder="Tìm truyện..."
+          style="font-size: 12px" autocomplete="off" />
+        <button type="submit" class="btn_search"><span class="sr-only">Search</span></button>
+      </fieldset>
+    </form>
+    <div id="search-result" class="search-result hide"></div>
+  </div>
+</div>
+        </div>
+        <div class="fun_search" id="fun_search" >
+          <div class="box-input">
+            <input id="txtSearch" type="text" class="i-search" placeholder="Tìm truyện..." />
+          </div>
+          <div id="result-manga" class="result-manga"></div>
+          <button class="b-search" title="Tìm truyện"></button>
+          <a class="btn-txt-cancel-search" title="Hủy tìm truyện" rel="nofollow"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+        </div>
+        <nav id="gnb" class="gnb menu-close">
+          <div class="gnb-header">
+            <div class="gnb-header-1">
+              <img src="/css/images/logo.png" width="159" alt="Hentaivl" class="gnb-logo" />
+              <p>Đọc truyện hentai online miễn phí mọi lúc, mọi nơi</p>
+              
+            </div>
+            <button type="button" class="btn btn-menu-close">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+          </div>
+          
+          <div class="gnb-body">
+            <ul>
+              <li>
+                <a href="/lich-su">
+                  <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                  <span class="text-red"> Lịch sử đọc truyện</span>
+                </a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="https://hentaiz.tube/" target="_blank">
+                  <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                  <span class="text-red"> HentaiZ</span>
+                </a>
+              </li>
+              <li class="divider"></li>
+              
+              <li>
+                <a href="javascript:void(0);" rel="nofollow">
+                  <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                  Thể loại
+                </a>
+                <ul class="sub-menu">
+                  <li>
+                    <a class="m-menu-item cathot" href="/">Tất cả</a>
+                  </li>
+                  <% categoriesFormat.forEach(function(item) { %>
+                  <li><a class="navbar-menu-item" href="/the-loai/3d-hentai/"> <%=item.name%></a></li>
+                  <% }); %>
+                  
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="gnb-back"></div>
+      </header>
+      <div class="seo-block">
+        <div class="container">
+          <h1>Đọc truyện Hentai Sex, Manhwa Hentai, Manga Hentai, Truyện Tranh 18+ Online</h1>
+        </div>
+      </div>
+      <div id="glo_contents">
+        <div class="section_todayup">
+          <div class="ongoing_title">
+            <h2>Hentai Hot</h2>
+          </div>
+          <div class="list_wrap">
+            <ul class="list-hot">
+              <% productsHOT?.forEach(function(item) { %>
+              <li class="item-c0">
+                <div class="visual">
+                  <div class="manga-thumb">
+                    <a href="/<%=item.slug%>" title="<%=item.name%>">
+                      <img src="<%=item.thumb%>" alt="<%=item.name%>" />
+                    </a>
+                  </div>
+                  <div class="main_text">
+                    <h3 class="title"><a href="/<%=item.slug%>" title="<%=item.nane%>"><%=item.name%></a></h3>
+                  </div>
+                </div>
+              </li>
+              <% }); %>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="section_todayup">
+        <h2>Hentai Mới Cập Nhật</h2>
+        <div class="list_wrap">
+          <ul class="slick_item">
+            <% newUpdateFormat.forEach(function(item) { %>
+                <li>
+              <div class="item">
+                <div class="visual">
+                  <div class="manga-thumb">
+                    <a href="/<%=item.slug%>/">
+                      <img src="/css/images/cover.gif" alt="<%=item.name%>" data-original="<%=item.thumb%>" class="lazy" />
+                    </a>
+                  </div>
+                  <div class="main_text">
+                    <h3 class="title"><a href="/<%=item.slug%>/"><%=item.name%></a></h3>
+                    <p class="etc">
+                      <span class="type04"><a href="/the-loai/manhwa/">Manhwa </a></span>
+                    </p>
+                    <p class="chapter"><a href="/<%=item.slug%>/<%=item.chapterSlug%>-ch<%=item.chapterId%>/" title="<%=item.chapterName%>" class="type01"><%=item.chapterName%> </a> <span><%=item.histories%></span></p>
+                  </div>
+                </div>
+              </div>
+            </li>
+              <% }); %>
+
+          </ul>
+        </div>
+      </div>
+      <div class="section_todayup">
+        <h2>Hentai Mới</h2>
+        <div class="list_wrap">
+          <ul class="slick_item">
+            <% newProductsFormat.forEach(function(item) { %>
+ <li>
+              <div class="item">
+                <div class="visual">
+                  <div class="manga-thumb">
+                    <a href="/<%=item.slug%>">
+                      <img src="/css/images/cover.gif" alt="<%=item.name%>" data-original="<%=item.thumb%>" class="lazy" />
+                    </a>
+                  </div>
+                  <div class="main_text">
+                    <h3 class="title"><a href="/<%=item.slug%>"><%=item.name%></a></h3>
+                    <p class="etc">
+                      <span class="type04"><a href="/the-loai/manhwa/">Manhwa </a></span>
+                    </p>
+                    <p class="chapter"><a href="/<%=item.slug%>/<%=item.chapterSlug%>-ch<%=item.chapterId%>/" title="<%=item.chapterName%>" class="type01"><%=item.chapterName%> </a> <span><%=item.creatAT%></span></p>
+                  </div>
+                </div>
+              </div>
+            </li>
+              <% }); %>
+          </ul>
+        </div>
+      </div>
+      <%-include('footer')%>
+   
+    </div>
+  </body>
+  
+</html>
